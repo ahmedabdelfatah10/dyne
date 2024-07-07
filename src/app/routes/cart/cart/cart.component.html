@@ -1,0 +1,32 @@
+<div class="header">
+    <img class="icon" src="icons/arrow-back.svg" (click)="goBack()" />
+    <p>cart</p>
+</div>
+
+
+@for(cartItem of cartItems();track cartItem.name){
+<div class="cart">
+    <div>
+        <img class="img" [src]="cartItem.thumbnail" alt="item image" />
+
+    </div>
+
+    <div class="details">
+        <p>{{cartItem.name}}</p>
+        <p>{{cartItem.price}} EGP</p>
+    </div>
+
+
+    <div class="price-add">
+        <img class="block" src="icons/add-button.svg" />
+        <p>{{cartItem.quantity}}</p>
+        <img class="block" src="icons/remove-cart.svg" (click)="removeFromCart(cartItem)" />
+    </div>
+
+</div>
+}
+
+<div class="order-btn" (click)="order()">
+    <p>Order</p>
+      <p>{{price()}}</p>
+</div>

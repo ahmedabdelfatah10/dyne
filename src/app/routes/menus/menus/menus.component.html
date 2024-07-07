@@ -1,0 +1,15 @@
+ 
+
+
+<div class="header">
+    <img class="icon" src="icons/arrow-back.svg" routerLink="../"/>
+    <p>{{name()}}</p>
+</div>
+<div class="container">
+    @for(menu of menus();track menu.name){
+        <div class="div background" [style.background]="getUrl(menu)"  [routerLink]="['/items',menu.id,menu.name,name()]">
+            <p>{{menu.name}}</p>
+        </div>
+    }
+</div>
+

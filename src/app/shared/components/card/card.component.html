@@ -1,0 +1,11 @@
+<div class="div background" [style.background]="this.url()">
+    <p class="title">{{restaurant().name}}</p>
+
+    <div class="container">
+        @for(chip of restaurant().tags;track chip){
+        <p class="chip">
+            {{chip}}
+        </p>
+        }
+    </div>
+</div>
