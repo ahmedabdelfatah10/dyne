@@ -1,13 +1,16 @@
 <div class="header">
-<h2>Restaurants </h2>
-<img src="icons/burger-menu.svg"/>
+  <h2>Restaurants</h2>
+  <img src="icons/burger-menu.svg" />
 </div>
 
 <div class="container">
-    @for (restaurant of  Restaurants(); track restaurant.name) {
-        <app-card [restaurant]="restaurant" [routerLink]="['/menus',restaurant.id,restaurant.name]" (click)="setMenus(restaurant)"></app-card>
-       } @empty {
-       <li>There are no items.</li>
-       }
+  @for (restaurant of Restaurants(); track restaurant.name) {
+    <app-card
+      [restaurant]="restaurant"
+      [routerLink]="['/menus', restaurant.id, restaurant.name]"
+      (click)="setMenus(restaurant)"
+    ></app-card>
+  } @empty {
+    <li>There are no items.</li>
+  }
 </div>
-

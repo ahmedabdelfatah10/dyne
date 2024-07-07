@@ -1,24 +1,22 @@
 <div class="cart">
   <div>
     <div class="img" [style.background]="this.url()" alt="item image">
-        @if(!this.cartItem().availability){
-            <p>unavailable</p>
-        }
-    
+      @if (!this.cartItem().availability) {
+        <p>unavailable</p>
+      }
     </div>
   </div>
   <div class="item-details">
-    <p class="title">{{cartItem().name}}</p>
-    <p class="description">{{cartItem().description}}</p>
+    <p class="title">{{ cartItem().name }}</p>
+    <p class="description">{{ cartItem().description }}</p>
     <div class="price-add">
-        <p>{{cartItem().price}}</p>
-       
-        @if(this.cartItem().availability){
-            <img class="block" src="icons/add-button.svg" (click)="addToCart()"/>
-        }@else{
-            <img class="block" src="icons/disabled-add-button.svg"/>
-        }
-      
+      <p>{{ cartItem().price }}</p>
+
+      @if (this.cartItem().availability) {
+        <img class="block" src="icons/add-button.svg" (click)="addToCart()" />
+      } @else {
+        <img class="block" src="icons/disabled-add-button.svg" />
+      }
     </div>
   </div>
 </div>

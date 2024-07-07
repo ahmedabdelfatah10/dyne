@@ -1,23 +1,19 @@
-
 <div class="header">
-    <div class="basic-info">
-        <img class="icon" src="icons/arrow-back.svg" (click)="goBack()"/>
-        <p>{{name()}}</p>
-    </div>
-   
-    <div [routerLink]="['/cart']">
-        <img  src="icons/cart.svg"/>
-        @if(cart.cart().length !== 0){
-           <div class="cart" [attr.value1]="cart.cart().length"></div>
-        }
-    </div>
+  <div class="basic-info">
+    <img class="icon" src="icons/arrow-back.svg" (click)="goBack()" />
+    <p>{{ name() }}</p>
+  </div>
+
+  <div [routerLink]="['/cart']">
+    <img src="icons/cart.svg" />
+    @if (cart.cart().length !== 0) {
+      <div class="cart" [attr.value1]="cart.cart().length"></div>
+    }
+  </div>
 </div>
 
+<p class="subheader">{{ menuname() }}</p>
 
-<p class="subheader">{{menuname()}}</p>
-
-@for(item of itemsInMenu();track item.name){
-    <app-cart-item [cartItem]="item" (addItem)="addToCart($event)"></app-cart-item>
+@for (item of itemsInMenu(); track item.name) {
+  <app-cart-item [cartItem]="item" (addItem)="addToCart($event)"></app-cart-item>
 }
-
-
